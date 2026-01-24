@@ -50,6 +50,47 @@
         }
 
         /* ... control-btn styles ... */
+        .control-btn {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #ff4d4d, #cc0000);
+            border: 4px solid #8b0000;
+            box-shadow:
+                0 6px 0 #8b0000,
+                0 8px 10px rgba(0, 0, 0, 0.5),
+                inset 2px 2px 5px rgba(255, 255, 255, 0.4);
+            color: #fff;
+            font-size: 32px;
+            font-weight: bold;
+            font-family: sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        #btn-up {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        #btn-left {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        #btn-down {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        #btn-right {
+            grid-column: 3;
+            grid-row: 2;
+        }
     </style>
 
     <script src="/iamfeelinglucky/pacman.js"></script>
@@ -84,8 +125,6 @@
 
     <script>
         // Keyboard Simulation Logic
-        // KeyCodes: Up=38, Down=40, Left=37, Right=39
-
         function simulateKeyEvent(type, keyCode) {
             var event = new KeyboardEvent(type, {
                 bubbles: true,
@@ -94,31 +133,26 @@
                 which: keyCode,
                 key: (keyCode === 37 ? 'ArrowLeft' : keyCode === 38 ? 'ArrowUp' : keyCode === 39 ? 'ArrowRight' : 'ArrowDown')
             });
-            // Hack for older properties if needed by game
             delete event.keyCode;
             Object.defineProperty(event, "keyCode", { "value": keyCode });
             delete event.which;
             Object.defineProperty(event, "which", { "value": keyCode });
-
             window.dispatchEvent(event);
         }
 
         var buttons = document.querySelectorAll('.control-btn');
         buttons.forEach(function (btn) {
             var keyCode = parseInt(btn.getAttribute('data-key'));
-
             var startHandler = function (e) {
-                e.preventDefault(); // Prevent text selection / touch scroll
+                e.preventDefault();
                 simulateKeyEvent('keydown', keyCode);
                 btn.classList.add('pressed');
             };
-
             var endHandler = function (e) {
                 e.preventDefault();
                 simulateKeyEvent('keyup', keyCode);
                 btn.classList.remove('pressed');
             };
-
             btn.addEventListener('mousedown', startHandler);
             btn.addEventListener('mouseup', endHandler);
             btn.addEventListener('touchstart', startHandler, { passive: false });
@@ -126,7 +160,6 @@
             btn.addEventListener('touchcancel', endHandler, { passive: false });
         });
     </script>
-
 </body>
 
 </html>
