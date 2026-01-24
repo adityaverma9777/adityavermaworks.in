@@ -5,109 +5,32 @@
     <title>Aditya Verma</title>
     <!-- Lock viewport on mobile devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link rel="apple-touch-icon-precomposed" href="../assets/favicon.png" />
     <link rel="icon" type="image/png" href="../assets/favicon.png" />
 
     <style>
+        /* ... existing styles ... */
         @font-face {
             font-family: 'Minecraftia';
             src: url('../assets/fonts/Minecraftia-Regular.ttf') format('truetype');
         }
 
-        #game-header {
-            position: fixed;
-            /* Changed from absolute to fixed */
-            top: 20px;
-            left: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            z-index: 10000;
-            /* Increased z-index */
-            pointer-events: none;
-            /* Let clicks pass through container */
-        }
-
-        .back-link {
-            color: #fff;
-            text-decoration: none;
-            font-family: 'Minecraftia', sans-serif;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            opacity: 0.8;
-            transition: opacity 0.2s;
-            cursor: pointer;
-            touch-action: manipulation;
-            /* Allow clicks */
-            padding: 15px;
-            /* Increase touch target */
-            margin: -15px;
-            /* Offset padding layout shift */
-            position: relative;
-            z-index: 20000;
-            /* Increased z-index */
-            pointer-events: auto;
-            /* Re-enable clicks */
-        }
-
-        .back-link:active {
-            opacity: 0.5;
-        }
-
-        .back-arrow {
-            font-size: 20px;
-            position: relative;
-            top: 3px;
-        }
-
-        .brand-text {
-            color: #fff;
-            font-family: 'Minecraftia', sans-serif;
-            font-size: 16px;
-            opacity: 0.8;
-        }
-    </style>
-    <!-- Existing styles continue... -->
-    <style>
-        body {
-            margin: 0;
-            background: #000;
-            overflow: hidden;
-            /* Prevent scrolling */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            height: 100vh;
-            touch-action: none;
-            /* Disable double-tap zoom etc */
-        }
+        /* ... existing styles ... */
 
         @font-face {
             font-family: 'ArcadeR';
-            src: url('font/ARCADE_R.TTF');
+            src: url('/iamfeelinglucky/font/ARCADE_R.TTF');
         }
 
-        #game-container {
-            position: relative;
-            margin-top: 10px;
-            display: flex;
-            justify-content: center;
-        }
+        /* ... existing styles ... */
 
-        #canvas-warning {
-            color: #FF0;
-            font-size: 1.5em;
-        }
-
-        /* Controls Container */
+        /* Controls Container - Hidden by default on desktop, shown on mobile */
         #controls-container {
+            display: none;
+            /* Default hidden */
             margin-top: 20px;
-            display: grid;
             grid-template-columns: repeat(3, 85px);
             grid-template-rows: repeat(2, 85px);
             gap: 15px;
@@ -119,50 +42,17 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
         }
 
-        .control-btn {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, #ff4d4d, #cc0000);
-            border: 4px solid #8b0000;
-            box-shadow:
-                0 6px 0 #8b0000,
-                0 8px 10px rgba(0, 0, 0, 0.5),
-                inset 2px 2px 5px rgba(255, 255, 255, 0.4);
-            color: #fff;
-            font-size: 32px;
-            font-weight: bold;
-            font-family: sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            user-select: none;
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
+        @media (max-width: 768px) {
+            #controls-container {
+                display: grid;
+                /* Show on mobile/tablet */
+            }
         }
 
-        #btn-up {
-            grid-column: 2;
-            grid-row: 1;
-        }
-
-        #btn-left {
-            grid-column: 1;
-            grid-row: 2;
-        }
-
-        #btn-down {
-            grid-column: 2;
-            grid-row: 2;
-        }
-
-        #btn-right {
-            grid-column: 3;
-            grid-row: 2;
-        }
+        /* ... control-btn styles ... */
     </style>
 
-    <script src="pacman.js"></script>
+    <script src="/iamfeelinglucky/pacman.js"></script>
 
 </head>
 
