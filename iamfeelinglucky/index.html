@@ -130,26 +130,21 @@
             color: #fff;
             text-decoration: none;
             font-family: 'Minecraftia', sans-serif;
-            /* Ensure font is applied */
             font-size: 18px;
-            /* Slightly larger */
             display: inline-flex;
             align-items: center;
-            background: rgba(0, 0, 0, 0.5);
-            /* Optional: distinct button feel */
-            padding: 10px 20px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            backdrop-filter: blur(4px);
-            transition: all 0.3s ease;
+            background: transparent;
+            padding: 0;
+            border: none;
+            transition: opacity 0.3s ease;
             cursor: pointer;
             pointer-events: auto;
+            opacity: 0.8;
         }
 
         .back-link:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: translateY(-2px);
+            opacity: 1;
+            transform: none;
         }
 
         .back-arrow {
