@@ -207,21 +207,44 @@ a:hover {
     background-color: var(--nav-active-bg);
 }
 
-/* I'm feeling lucky link - Cyan, right side */
-.nav-lucky {
-    margin-left: auto;
+/* I'm feeling lucky link - cyan, under socials */
+.mobile-lucky-btn {
+    display: inline-flex;
+    align-items: center;
     font-size: 14px;
     color: var(--link-color);
     text-decoration: none;
     font-weight: 400;
+    margin-top: 16px;
 }
 
-.nav-lucky:hover {
+.mobile-lucky-btn:hover {
     opacity: 0.8;
 }
 
-.mobile-lucky-btn {
-    display: none;
+.headphones-btn {
+    color: #d946ef !important; /* Vibrant fuchsia */
+}
+
+[data-theme="light"] .headphones-btn {
+    color: #c026d3 !important; /* Deeper fuchsia for proper contrast */
+}
+
+/* Headphones Animation */
+.headphones-icon {
+    display: inline-block;
+    margin-left: 6px;
+    animation: headphoneGroove 1.5s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes headphoneGroove {
+    0% { transform: rotate(0deg) scale(1); }
+    20% { transform: rotate(-10deg) scale(1.1); }
+    40% { transform: rotate(10deg) scale(1.1); }
+    60% { transform: rotate(-5deg) scale(1.05); }
+    80% { transform: rotate(5deg) scale(1.05); }
+    100% { transform: rotate(0deg) scale(1); }
 }
 
 /* Pacman Animation */
@@ -888,21 +911,6 @@ a:hover {
         padding: 4px 10px;
         white-space: normal;
         flex-shrink: 1;
-    }
-
-    .nav-lucky {
-        display: none;
-        /* Hide the nav one on mobile */
-    }
-
-    /* Mobile specific lucky button in header */
-    .mobile-lucky-btn {
-        display: block;
-        font-size: 14px;
-        color: var(--link-color);
-        text-decoration: none;
-        margin-top: 16px;
-        font-weight: 400;
     }
 
     .timeline-header {

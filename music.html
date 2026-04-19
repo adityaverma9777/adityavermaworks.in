@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinyl Player | Aditya Verma</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/music.css"> 
+</head>
+<body>
+    <!-- Ambient Moving Background Elements -->
+    <div class="ambient-background">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+    </div>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+
+    <div class="container player-container">
+        <header class="header">
+            <a href="index.html" class="logo-text" style="text-decoration: none;">Aditya Verma</a>
+            <p class="subtitle" style="margin-bottom: 8px;">Headphones strictly recommended 🎧</p>
+            <a href="index.html" class="back-link mobile-lucky-btn" style="margin-top: 0; font-size: 13px;">← Back to Portfolio</a>
+        </header>
+
+        <main class="player-main">
+            <div class="vinyl-wrapper">
+                <div class="tonearm-container">
+                    <div class="tonearm-pivot"></div>
+                    <div class="tonearm" id="tonearm">
+                        <div class="tonearm-stick"></div>
+                        <div class="tonearm-head"></div>
+                    </div>
+                </div>
+                <div class="vinyl-record" id="vinylRecord">
+                    <div class="vinyl-groove"></div>
+                    <div class="vinyl-groove groove-2"></div>
+                    <div class="vinyl-groove groove-3"></div>
+                    <img src="" id="albumArt" alt="Album Art" />
+                    <div class="vinyl-hole"></div>
+                </div>
+            </div>
+
+            <div class="player-right-panel">
+                <div class="player-controls-container project-grid-card">
+                    <h2 id="trackTitle" class="track-title">Select a track...</h2>
+                    
+                    <div class="progress-wrapper">
+                        <span id="currentTime" class="time-label">0:00</span>
+                        <div class="progress-bar-container" id="progressContainer">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <span id="durationTime" class="time-label">0:00</span>
+                    </div>
+
+                    <div class="controls-row">
+                        <button id="prevBtn" class="control-btn" aria-label="Previous">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+                        </button>
+                        <button id="playBtn" class="control-btn play-pause-btn" aria-label="Play">
+                            <svg viewBox="0 0 24 24" id="playIcon" fill="currentColor" width="32" height="32"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <button id="nextBtn" class="control-btn" aria-label="Next">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="playlist-section project-grid-card" style="margin-top: 24px;">
+                    <h3 class="project-grid-title" style="margin-bottom: 16px;">Playlist</h3>
+                    <div class="playlist-list" id="playlist">
+                        <!-- Populated via JS -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Hidden audio element -->
+    <audio id="audioPlayer"></audio>
+
+    <script src="js/music.js"></script>
+</body>
+</html>
