@@ -12,8 +12,7 @@
     font-display: swap;
 }
 
-/* Google Fonts - Inter for body text */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+/* Google Fonts loaded via HTML <link> for performance */
 
 /* CSS Variables - EXACT from aayushkapoor.me */
 :root {
@@ -107,6 +106,25 @@ a:hover {
     font-weight: 400;
     color: var(--text-secondary);
     margin-bottom: 16px;
+}
+h1.logo-text {
+    font-size: 26px;
+    margin: 0 0 4px 0;
+    line-height: 1.6;
+}
+h2.subtitle {
+    font-size: 14px;
+    margin: 0 0 16px 0;
+    line-height: 1.6;
+}
+.site-footer {
+    text-align: center;
+    padding: 48px 0 0 0;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+.site-footer p {
+    margin: 0;
 }
 
 /* Social Icons - Under subtitle, inline */
@@ -893,7 +911,8 @@ a:hover {
         padding: 60px 24px;
     }
 
-    .logo-text {
+    .logo-text,
+    h1.logo-text {
         font-size: 20px;
     }
 
