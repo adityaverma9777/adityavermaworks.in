@@ -42,19 +42,9 @@ const tracks = [
         cover: 'assets/mp3/kaali nagin ke jaisi.jpg'
     },
     {
-        title: 'Neha Bhasin - Kut Kut Bajra',
-        src: 'assets/mp3/Kut Kut Bajra - Neha Bhasin ( Official Video ) Latest PunjabiSongs2023.mp3',
-        cover: 'assets/mp3/Kut-Kut-Bajra-Selected-Image-1.png'
-    },
-    {
         title: 'Mitta Ror - Sheesha',
         src: 'assets/mp3/Sheesha (Official Music Video)  Mitta Ror ft. Swara Verma  Sorab Bedi  Niharika Tiwari.mp3',
         cover: 'assets/mp3/Sheesha-Punjabi-2022-20220825023036-500x500.jpg'
-    },
-    {
-        title: 'Rawme Hooda - TOTAL',
-        src: 'assets/mp3/TOTAL II RAWME HOODA II NEW HARYANAHIP HOP SONG #Total #totalsong #song #mani vlog 201.mp3',
-        cover: 'assets/mp3/Total-Haryanvi-2026-20251229123656-500x500.jpg'
     }
 ];
 
